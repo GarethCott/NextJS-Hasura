@@ -10,6 +10,7 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="">
         <form action=""></form>
+        <h1>Friend List</h1>
        {friends.map(friend => (
         <p key={friend.id}>{friend.name}</p>
        ))}
