@@ -1,6 +1,7 @@
 "use client"
 import GetFriends from "@/app/components/getFriends"
-
+import AddFriends from "./components/addFriends"
+import {useState} from "react"
 type Data = {
   friend: Record<string, string>[]
 }
@@ -40,10 +41,24 @@ export default function Home() {
 
   // const friends = await getFriends()
   // console.log(friends)
-
+  const [name, setName] = useState('');
+  const [id, setId] = useState('');
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+         <input className='p-4'
+    type="text"
+    value={name}
+    onChange={e => { setName(e.currentTarget.value); }}
+   
+/>
+<input className='p-4'
+    type="number"
+    value={id}
+    onChange={e => { setId(e.currentTarget.value); }}
+   
+/>
+      <AddFriends name={name} id={Number(id)}/>
       <GetFriends/>
     </main>
   )

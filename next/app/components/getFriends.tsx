@@ -1,3 +1,4 @@
+"use client"
 // Import everything needed to use the `useQuery` hook
 import { useQuery, gql } from '@apollo/client';
 
@@ -17,6 +18,7 @@ const GET_Friends = gql
        }`;
 
 export default function GetFriends({}: Props) {
+
     const { loading, error, data } = useQuery(GET_Friends);
 
     const friends:Data = data;
@@ -28,5 +30,6 @@ export default function GetFriends({}: Props) {
       <div key={id}>
         <h3>{name}</h3>
       </div>
-    ));
+    ))
+
 }
